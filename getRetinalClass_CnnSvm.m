@@ -11,10 +11,8 @@ end
 disp(['Input image : ' name]);
 %%
 imType = {'Normal' , 'Exudates' , 'Drusen'};
-addpath(genpath(fullfile('./libs/','matconvnet-1.0-beta24')));
-addpath('./libs/libsvm-3.22');
+
 %% Network Configuration
-% vl_compilenn; %%- Run only once in the begeinning to compile mex files
 run vl_setupnn;
 opts.modelType = 'imagenet-googlenet-dag';
 net = load(['models/' opts.modelType '.mat']);
